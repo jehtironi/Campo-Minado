@@ -8,6 +8,6 @@ As regras do jogo, de acordo com a Wikipedia, são:
 
 O objetivo deste trabalho é fazer uma versão desse jogo no Python utilizando o console como saída. O mapa do jogo pode ter qualquer tamanho de N x M.
 A cada rodada, o mapa do jogo deve ser desenhado, obedecendo o padrão abaixo:
-   * - : um campo revelado que não tem nenhuma bomba adjacente.
+   * '-' : um campo revelado que não tem nenhuma bomba adjacente.
    * 1, 2, ... : campos onde tem o número correspondente de bombas adjacentes.
    * '#' : campo ainda não revelado.
