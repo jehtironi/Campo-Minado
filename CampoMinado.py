@@ -3,6 +3,7 @@
 #Data: 19/04
 def criarMat(e): #funcao que gera o campo minado
     if (e == 1):
+        # Campo inicial com minas e dicas
         campo = [["@", "1", "-", "1", "1", "2", "@", "2", "@"],
                 ["1", "1", "-", "1", "@", "2", "1", "2", "1"],
                 ["-", "-", "-", "1", "1", "1", "-", "-", "-"],
@@ -15,6 +16,7 @@ def criarMat(e): #funcao que gera o campo minado
                 ["-", "-", "1", "@", "1", "-", "-", "1", "1"]]
                   
     if (e == 0):
+        # Campo inicial vazio
         campo = [["#", "#", "#", "#", "#", "#", "#", "#", "#"],
                 ["#", "#", "#", "#", "#", "#", "#", "#", "#"],
                 ["#", "#", "#", "#", "#", "#", "#", "#", "#"],
@@ -91,19 +93,19 @@ def Vazios(campo, aux): #Função que verifica se tem mais vazios
                     except: 
                         i=i
                                 
-def jogar(): #Função jogar
+def jogar(): # Função principal do jogo
 
     inicio = 0
     while(inicio == 0):
         print("\t\t Bem vindo ao jogo. Boa sorte.")
         fim = 0
         e = 1
-        campo = criarMat(e)
+        campo = criarMat(e) # Cria o campo com minas
         e = 0
-        aux = criarMat(e)
-        tentativas = 41
+        aux = criarMat(e) # Cria o campo vazio
+        tentativas = 41  # Número de tentativas permitidas
         
-        mostrar(aux)
+        mostrar(aux) # Mostra o campo vazio
         
         
         while(fim == 0):
@@ -137,7 +139,7 @@ def jogar(): #Função jogar
                 print("\tBUMMM. Você perdeu.")
                 fim = 1
             elif(campo[linha][coluna] == '-'):
-                Vazios(campo, aux)                      
+                Vazios(campo, aux)  # Verifica e revela espaços vazios adjacentes                  
                 mostrar(aux)
             else:
                 aux[linha][coluna] = campo[linha][coluna]
